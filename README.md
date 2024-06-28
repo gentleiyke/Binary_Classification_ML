@@ -1,50 +1,59 @@
-### Customer Churn Analysis
+# Customer Churn Prediction for ConnectTel
 
-#### Problem Overview
+## Project Overview
 
-This project aims to analyse customer churn data to understand the factors contributing to customer retention and attrition. The analysis uses a dataset that includes various customer attributes and their subscription details. The primary steps involve data cleaning, exploratory data analysis (EDA), feature engineering, model building, and evaluation.
+ConnectTel is facing a significant challenge with customer churn, which impacts its revenue and growth. The aim of this project is to develop a robust customer churn prediction system using advanced analytics and machine learning techniques. By accurately forecasting which customers are likely to churn, ConnectTel can implement targeted retention strategies to reduce customer attrition, enhance loyalty, and maintain a competitive edge in the telecommunications industry.
 
-#### Steps Involved
+## Dataset
 
-1. **Data Loading and Initial Inspection**
-    - Load the dataset and perform initial inspections to understand its structure and contents.
+The dataset consists of customer information, including demographic details, account information, service usage patterns, and churn status. The features include:
 
-2. **Data Cleaning**
-    - Handle missing values, especially focusing on the `totalcharges` column which has 11 missing values.
-    - Convert data types as necessary to ensure consistency and accuracy in analysis.
+- **Demographic Information:** Gender, SeniorCitizen, Partner, Dependents
+- **Account Information:** Tenure, Contract, PaperlessBilling, PaymentMethod, MonthlyCharges, TotalCharges
+- **Service Information:** PhoneService, MultipleLines, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies
+- **Churn Information:** Churn
 
-3. **Exploratory Data Analysis (EDA)**
-    - Perform univariate and bivariate analysis to identify patterns and correlations.
-    - Visualize data distributions and relationships using plots and charts.
+### Problem Definition
+- **Objective:** Develop a machine learning model to predict customer churn.
+- **Target Variable:** Churn (Yes/No)
 
-4. **Feature Engineering**
-    - Create new features from existing ones to enhance model performance.
-    - Standardize numerical features to ensure they are on a comparable scale.
+### Data Exploration and Preprocessing
+- **Load Libraries:** Import necessary libraries for data analysis, visualization, and machine learning.
+- **Data Loading:** Load the dataset and examine its structure.
+- **Data Cleaning:** Handle missing values and drop unnecessary columns.
+- **Exploratory Data Analysis (EDA):**
+  - Visualize relationships between the target variable and key features.
+  - Explore correlations and conduct univariate, bivariate, and multivariate analysis.
 
-5. **Model Building**
-    - Split the data into training and testing sets.
-    - Build and train three machine learning models to predict customer churn.
-    - Use cross-validation to tune hyperparameters and select the best model.
+### Feature Engineering
+- **Encoding Categorical Variables:** Convert categorical variables into numerical format using Label Encoding and One-Hot Encoding.
+- **Creating New Features:** Generate new features based on insights from EDA to enhance model performance.
 
-6. **Model Evaluation**
-    - Evaluate the models using appropriate metrics (precision, recall, and F1-score).
-    - Compare model performances and select the best-performing model for deployment.
+### Model Selection, Training, and Validation
+- **Train-Test Split:** Split the data into training and testing sets.
+- **Model Training:** Train three supervised learning models, including:
+  - Logistic Regression
+  - Gradient Boosting
+  - Support Vector Machine (SVM)
+- **Hyperparameter Tuning:** Use RandomizedSearchCV to optimise model hyperparameters.
+- **Model Evaluation:** Evaluate model performance using the following metrics precision, recall, F1-score and confusion matrix.
 
-7. **Model Interpretation and Insights**
-    - Interpret the model results to derive actionable insights.
-    - Identify the most significant features that influence customer churn.
+### Model Evaluation
+- **Compare Models:** Analyse the results of the models and select the best-performing one based on evaluation metrics.
+- **Business Considerations:** Consider the impact of false positives and false negatives on the business to decide the best-suited model.
 
-#### Challenges
+**Model Interpretation and Insights**
+- Interpret the model results to derive actionable insights.
+- Identify the most significant features that influence customer churn.
 
-- **Handling Missing Values:**
-    - The dataset contains 11 missing values in the `totalcharges` column. Properly identifying and handling these missing values was crucial for maintaining data integrity.
-    
-- **Feature Selection:**
-    - Selecting the most relevant features for model training involved balancing between too many features (overfitting) and too few features (underfitting).
+## Challenges Faced
+- Handling class imbalance in the dataset.
+- Feature engineering to improve model performance.
+- Selecting the most appropriate evaluation metrics for the business problem.
 
-#### Conclusion
+## Conclusion
 
-This project provides a comprehensive analysis of customer churn, leveraging machine learning techniques to predict churn and offer insights into customer behavior. The findings can help businesses implement strategies to improve customer retention and reduce churn rates.
+ConnectTel can proactively address customer attrition and implement effective retention strategies by developing an accurate customer churn prediction model. This project demonstrates the application of data science and machine learning techniques to solve a critical business problem in the telecommunications industry.
 
 ### Dependencies
 
